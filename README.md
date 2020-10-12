@@ -19,6 +19,7 @@
 ### WHEN the password is generated
 ### THEN the password is either displayed in an alert or written to the page
 
+# PSUEDOCODE
 _Action: user clicks button_
 
 - prompt for length between 8 & 128 characters
@@ -46,3 +47,6 @@ _if all false, return message you must select at least one special character typ
 
 ### Place password into html element.
 
+https://javascript.info/array-methods
+https://hackinbits.com/articles/understanding-array-concat-method-in-javascript
+https://stackoverflow.com/questions/45756935/how-to-convert-array-content-to-uppercase

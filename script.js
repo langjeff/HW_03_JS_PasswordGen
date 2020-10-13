@@ -15,22 +15,23 @@ var lowCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 var numChar = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 //stores special character values for password
-var specChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var specChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 
+// function to return array of strings to upper case array
 toUpper = function (x) {
   return x.toUpperCase();
 };
 
-var upCase = lowCase.map(toUpper);
 // map function on variable to write toUpper case into Array.
-// lowCase.map(a => a.toUpperCase());
-// },
-//converts lowercase to uppercase letters
-
-// lowCase.map(function(x) { return x.toUpperCase(); });
+var upCase = lowCase.map(toUpper);
 
 // variable for concatenated array after confirmation of character types to pass to for loop
 var passPool;
+
+// variable for placeholder array for passing upper case when it is the only array selected // learned this from other students in class //
+var holderArray = [];
+
+
 // ************************FUNCTIONS AND ACTIONS*********************************
 
 // Add event listener to generateBtn to execute 'writePassword' function on click
@@ -38,8 +39,8 @@ generateBtn.addEventListener("click", writePassword);
      
 // declares function to 'writePassword'
 function writePassword() {
-  // calls generate password function and stores result as variable
-  var password = generatePassword();
+  // calls generate password function 
+  generatePassword();
   // creates variable for html text element with id password
   var passwordText = document.querySelector("#password");
   // passes value of password from 'generatePassword' function to the password element in html
@@ -96,5 +97,54 @@ function generatePassword() {
     passPool= upCase.concat(numChar, specChar);
   }
   //if 2 confirms true
-  console.log(passPool);
+    else if(confirmLow && confirmUp) {
+    passPool= lowCase.concat(upCase);
+  }
+    else if(confirmLow && confirmNum) {
+    passPool= lowCase.concat(numChar);
+  }
+    else if(confirmLow && confirmSpec) {
+    passPool= lowCase.concat(specChar);
+  }
+    else if(confirmUp && confirmNum) {
+    passPool= upCase.concat(numChar);
+  } 
+    else if(confirmUp && confirmSpec) {
+    passPool= upCase.concat(specChar);
+  }
+    else if(confirmNum && confirmSpec) {
+    passPool= numChar.concat(specChar);
+  }
+  // if only one chosen
+    else if(confirmLow) {
+    passPool= lowCase;
+  }
+    else if(confirmNum) {
+    passPool= numChar;
+    }
+    else if(confirmSpec) {
+    passPool= specChar;
+  }
+    else if(confirmUp) {
+    passPool= holderArray.concat(upCase);
+  }
+    console.log(passPool);
+    console.log(passPool.length);
+    console.log(pLength);
+  //array to pass randomChar to in for loop.
+  var passArray = [];
+  // for loop to choose random selections from passpool array 
+  for (i=0; i < pLength; i++) {
+  // method to pull random character from passPool array
+  var randomChar = passPool[Math.floor(Math.random() * passPool.length)];
+  // push method to add elements from randomChar to array 
+  passArray.push(randomChar);
+  }
+  //console log test for array elements in password
+  //for (j=0; j<passArray.length; j++) {
+  //console.log(passArray[j]);  
+  
+  // join method to pass array to string with no delimiter  
+  password = passArray.join('');
+  //console.log(password); console log for testing password
 }

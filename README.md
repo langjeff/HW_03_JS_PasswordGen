@@ -50,3 +50,4 @@ _if all false, return message you must select at least one special character typ
 https://javascript.info/array-methods
 https://hackinbits.com/articles/understanding-array-concat-method-in-javascript
 https://stackoverflow.com/questions/45756935/how-to-convert-array-content-to-uppercase
+https://stackoverflow.com/questions/28007949/how-to-convert-array-into-string-without-comma-and-separated-by-space-in-javascr/28007976

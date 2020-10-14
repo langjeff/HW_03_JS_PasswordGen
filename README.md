@@ -1,33 +1,18 @@
-# HW_03_JS_PasswordGen
-## Building a password generator with JavaScript
+# Javascript Password Generator
 
-# APP CRITERIA & APPROACH
+The purpose of this application is to generate a random password by prompting the user for a password length and what time of characters they want included in the password: lowercase, uppercase, numbers, and special characters.
 
-### GIVEN I need a new, secure password
-### WHEN I click the button to generate a password
-### THEN I am presented with a series of prompts for password criteria
-### WHEN prompted for password criteria
-### THEN I select which criteria to include in the password
-### WHEN prompted for the length of the password
-### THEN I choose a length of at least 8 characters and no more than 128 characters
-### WHEN prompted for character types to include in the password
-### THEN I choose lowercase, uppercase, numeric, and/or special characters
-### WHEN I answer each prompt
-### THEN my input should be validated and at least one character type should be selected
-### WHEN all prompts are answered
-### THEN a password is generated that matches the selected criteria
-### WHEN the password is generated
-### THEN the password is either displayed in an alert or written to the page
+# Deployment
 
-# PSUEDOCODE
+
+
+# Psuedocode and Logic
+
 _Action: user clicks button_
-
 - prompt for length between 8 & 128 characters
 - store answer as numeric variable (to be used later in for loop for generating password)
 - create arrays for lowercase, numeric, & special character types (use toUpper() on lowercase for upper case array.)
-
-_confirm: you will need to chose at least one character type for your password_
-
+  _confirm: you will need to chose at least one character type for your password_
 - confirm for lowercase
 - store answer as boolean variable
 - confirm for uppercase
@@ -36,18 +21,19 @@ _confirm: you will need to chose at least one character type for your password_
 - store answer as boolean
 - confirm special
 - store answer as boolean
+  _at end of confirms, validate at least 1 true_
+  _if all false, return message you must select at least one special character type_
 
-_at end of confirms, validate at least 1 true_
-_if all false, return message you must select at least one special character type_
+## After above confirmations and prompts, the function to construct the password performs the following steps.
 
-## AFTER ABOVE, WRITE FORMULA FOR DETERMINING PASSWORD USING:
-### for loop with Math.floor(Math.random) for entered length. Use push() to store result of each loop to new array to be used in for loop.
+- if-else statements to evaluate what arrays to concatenate to iterate through for selection.
+- for loop to select random elements from above concatenated array. Using Math.floor(Math.random) arraylength iterate through for loop with entered length of password.
+- Use push() to store result of each loop to new array to be used in for loop.
+- Convert password array to string using .join();
+- Place password into html element.
 
-### Convert password array to string using .join();
-
-### Place password into html element.
-
-https://javascript.info/array-methods
-https://hackinbits.com/articles/understanding-array-concat-method-in-javascript
-https://stackoverflow.com/questions/45756935/how-to-convert-array-content-to-uppercase
-https://stackoverflow.com/questions/28007949/how-to-convert-array-into-string-without-comma-and-separated-by-space-in-javascr/28007976
+### Some references I used for this project you might find helpful:
+* [Array methods reference](https://javascript.info/array-methods)
+* [Method for concatenating arrays](https://hackinbits.com/articles/understanding-array-concat-method-in-javascript)
+* [Converting lowercase array elements to uppercase](https://stackoverflow.com/questions/45756935/how-to-convert-array-content-to-uppercase)
+* [Creating a string from the password array](https://stackoverflow.com/questions/28007949/how-to-convert-array-into-string-without-comma-and-separated-by-space-in-javascr/28007976)

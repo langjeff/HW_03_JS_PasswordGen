@@ -128,9 +128,10 @@ function generatePassword() {
     else if(confirmUp) {
     passPool= holderArray.concat(upCase);
   }
-    console.log(passPool);
-    console.log(passPool.length);
-    console.log(pLength);
+    // console logs for testing
+    // console.log(passPool);
+    // console.log(passPool.length);
+    // console.log(pLength);
   //array to pass randomChar to in for loop.
   var passArray = [];
   // for loop to choose random selections from passpool array 

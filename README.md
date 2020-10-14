@@ -4,11 +4,13 @@ The purpose of this application is to generate a random password by prompting th
 
 # Deployment
 
-
+- [Site Deployed on Github Pages](https://langjeff.github.io/HW_03_JS_PasswordGen/)
+- [Github Repository for Project](https://github.com/langjeff/HW_03_JS_PasswordGen)
 
 # Psuedocode and Logic
 
 _Action: user clicks button_
+
 - prompt for length between 8 & 128 characters
 - store answer as numeric variable (to be used later in for loop for generating password)
 - create arrays for lowercase, numeric, & special character types (use toUpper() on lowercase for upper case array.)
@@ -33,7 +35,8 @@ _Action: user clicks button_
 - Place password into html element.
 
 ### Some references I used for this project you might find helpful:
-* [Array methods reference](https://javascript.info/array-methods)
-* [Method for concatenating arrays](https://hackinbits.com/articles/understanding-array-concat-method-in-javascript)
-* [Converting lowercase array elements to uppercase](https://stackoverflow.com/questions/45756935/how-to-convert-array-content-to-uppercase)
-* [Creating a string from the password array](https://stackoverflow.com/questions/28007949/how-to-convert-array-into-string-without-comma-and-separated-by-space-in-javascr/28007976)
+
+- [Array methods reference](https://javascript.info/array-methods)
+- [Method for concatenating arrays](https://hackinbits.com/articles/understanding-array-concat-method-in-javascript)
+- [Converting lowercase array elements to uppercase](https://stackoverflow.com/questions/45756935/how-to-convert-array-content-to-uppercase)
+- [Creating a string from the password array](https://stackoverflow.com/questions/28007949/how-to-convert-array-into-string-without-comma-and-separated-by-space-in-javascr/28007976)

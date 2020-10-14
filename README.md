@@ -1,6 +1,6 @@
 # Javascript Password Generator
 
-The purpose of this application is to generate a random password by prompting the user for a password length and what time of characters they want included in the password: lowercase, uppercase, numbers, and special characters.
+The purpose of this application is to generate a random password by prompting the user for a password length and what type of characters they want included in the password: lowercase, uppercase, numbers, and special characters.
 
 # Deployment
 
